@@ -3,14 +3,14 @@ pull_request_rules:
     conditions:
       - and:
         - "#commits-behind=0"
-        - "#conflict=false"
+        - "conflict=false"
     actions:
       queue:
         method: rebase
   - name: Rebase when out of date
     conditions:
       - and:
-        - "#commits-behind>=1"
-        - "#conflict=false"
+        - "#commits-behind>0"
+        - "conflict=false"
     actions:
       rebase:
