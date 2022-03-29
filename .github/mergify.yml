@@ -3,7 +3,7 @@ pull_request_rules:
     conditions:
       - and:
         - "#commits-behind=0"
-        - "conflict=false"
+        - -conflict
     actions:
       queue:
         method: rebase
@@ -11,6 +11,6 @@ pull_request_rules:
     conditions:
       - and:
         - "#commits-behind>0"
-        - "conflict=false"
+        - -conflict
     actions:
       rebase:
