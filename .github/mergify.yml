@@ -10,4 +10,3 @@ pull_request_rules:
       - "#commits-behind>=1"
     actions:
       rebase:
-        method: merge
