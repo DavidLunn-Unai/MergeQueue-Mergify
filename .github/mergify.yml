@@ -6,6 +6,7 @@ pull_request_rules:
         - -conflict
     actions:
       queue:
+        name: "MergeMe1"
         method: rebase
   - name: Rebase when out of date
     conditions:
