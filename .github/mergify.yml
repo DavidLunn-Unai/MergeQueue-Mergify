@@ -1,12 +1,16 @@
 pull_request_rules:
   - name: Automatic merge ⬇️ on approval ✔
     conditions:
-      - "#approved-reviews-by>=1"
+      - and:
+        - "#commits-behind=0"
+        - "#conflict=false"
     actions:
-      merge:
-        method: merge
+      queue:
+        method: rebase
   - name: Rebase when out of date
     conditions:
-      - "#commits-behind>=1"
+      - and:
+        - "#commits-behind>=1"
+        - "#conflict=false"
     actions:
       rebase:
