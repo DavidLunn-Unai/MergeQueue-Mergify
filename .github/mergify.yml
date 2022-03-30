@@ -1,9 +1,9 @@
 queue_rules:
   - name: "MergeMe1"
-    conditions: []  # no extra conditions needed to get merged
+    conditions: []
 
 pull_request_rules:
-  - name: Automatic merge ⬇️ on approval ✔
+  - name: Automatic merge
     conditions:
       - and:
         - "#commits-behind=0"
